@@ -40,11 +40,17 @@ function applyDayNum() {
         count--;
       }
     }
-    dayNum[i].textContent = count;
+
+    if (count === 1) {
+      dayNum[i].textContent = `${count} Day Left`;
+    } else if (count === 0) {
+      dayNum[i].textContent = 'Move on!';
+    } else {
+      dayNum[i].textContent = `${count} Days Left`;
+    }
+
   }
 }
-
-applyDayNum();
 
 for (let i = 0; i < content.children.length; i++) {
   for (let k = 0; k <= month; k++) {
