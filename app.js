@@ -4,11 +4,50 @@ const dayLeft = document.querySelectorAll('.day-left');
 const dayNum = document.querySelectorAll('.day-num');
 const dayYear = document.querySelector('.day-year');
 const content = document.querySelector('.content');
+const hourSelector = document.querySelector('.hour');
+const minuteSelector = document.querySelector('.minute');
+const secondSelector = document.querySelector('.second');
+const indicatorSelector = document.querySelector('.indicator');
 
 const d = new Date();
 
 const month = d.getMonth();
 const date = d.getDate();
+const hour = d.getHours();
+const minute = d.getMinutes();
+const seconds = d.getSeconds();
+
+function getTime() {
+  if (hour < 10) {
+    hourSelector.innerHTML = `0${hour}`;
+  } else {
+    hourSelector.innerHTML = hour;
+  }
+
+  if (hour <= 12) {
+    indicatorSelector.innerHTML = ' AM';
+  } else {
+    indicatorSelector.innerHTML = ' PM';
+  }
+
+  if (minute < 10) {
+    minuteSelector.innerHTML = `0${minute}`;
+  } else {
+    minuteSelector.innerHTML = minute;
+  }
+
+  if (seconds < 10) {
+    secondSelector.innerHTML = `0${seconds}`;
+  } else {
+    secondSelector.innerHTML = seconds;
+  }
+
+  let t = setTimeout(function () {
+    getTime();
+  }, 1000);
+}
+
+getTime();
 
 function applyDayYear() {
   let count = 0;
