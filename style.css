@@ -1,0 +1,116 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --day-size: 35px;
+  --mark-size: calc(var(--day-size) * .8);
+}
+
+h1 {
+  padding: 45px;
+  font-size: 40px;
+}
+
+h1 span {
+  padding: 15px;
+  background-color: black;
+  color: white;
+}
+
+h3 {
+  font-size: 30px;
+}
+
+h3 span {
+  padding: 15px;
+  background-color: black;
+  color: white;
+}
+
+h1, h3 {
+  text-align: center;
+  background-color: lightslategray;
+}
+
+h2 {
+  text-align: center;
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+.content {
+  padding: 30px 0;
+  background-color: lightslategrey;
+  width: 100vw;
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  justify-content: center;
+  align-content: center;
+  grid-gap: 30px;
+}
+
+.content .month {
+  padding: 15px;
+  width: 400px;
+  height: 350px;
+  background-color: black;
+  border: 2px solid lightseagreen;
+  position: relative;
+}
+
+.content .day-block {
+  display: grid;
+  grid-gap: 15px;
+  grid-template-columns: repeat(7, auto);
+}
+
+.content .day-block .day {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  width: var(--day-size);
+  height: var(--day-size);
+  background-color: rgb(52, 221, 52);
+  border: 1px solid sandybrown;
+}
+
+.content .day-left {
+  display: flex;
+  font-size: 30px;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 200px;
+  height: 75px;
+  background: white;
+  border: 2px solid red;
+}
+
+.crossed::before,
+.crossed::after {
+  content: '';
+  position: absolute;
+  width: calc(var(--mark-size) * .15);
+  height: var(--mark-size);
+  background-color: #000;
+}
+
+.crossed::before {
+  transform: rotate(45deg);
+}
+
+.crossed::after {
+  transform: rotate(-45deg);
+}
+
+.crossed {
+  background-color: red !important;
+  border: 1px solid red !important;
+  color: red;
+}
