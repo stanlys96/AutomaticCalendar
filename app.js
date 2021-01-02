@@ -42,9 +42,8 @@ function getTime() {
     secondSelector.innerHTML = seconds;
   }
 
-  let t = setTimeout(function () {
-    getTime();
-  }, 1000);
+  setTimeout(getTime, 1000);
+
 }
 
 getTime();
