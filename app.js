@@ -13,18 +13,24 @@ const d = new Date();
 
 const month = d.getMonth();
 const date = d.getDate();
-const hour = d.getHours();
+let hour = d.getHours();
+const hour2 = d.getHours();
 const minute = d.getMinutes();
 const seconds = d.getSeconds();
 
 function getTime() {
+
+  if (hour >= 12) {
+    hour -= 12;
+  }
+
   if (hour < 10) {
     hourSelector.innerHTML = `0${hour}`;
   } else {
     hourSelector.innerHTML = hour;
   }
 
-  if (hour <= 12) {
+  if (hour2 <= 12) {
     indicatorSelector.innerHTML = ' AM';
   } else {
     indicatorSelector.innerHTML = ' PM';
