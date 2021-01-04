@@ -30,7 +30,7 @@ function getTime() {
     hourSelector.innerHTML = hour;
   }
 
-  if (hour2 <= 12) {
+  if (hour2 < 12) {
     indicatorSelector.innerHTML = ' AM';
   } else {
     indicatorSelector.innerHTML = ' PM';
